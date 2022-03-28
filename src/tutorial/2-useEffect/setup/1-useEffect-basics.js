@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, isValidElement } from 'react';
 // by default runs after every re-render
 // cleanup function
 // second parameter
@@ -6,7 +6,9 @@ const UseEffectBasics = () => {
   const [value, setValue] = useState(0)
   useEffect(() => {
     console.log('call useeffect')
-    document.title = `New Messages(${value})`
+    if(value >= 1) {
+      document.title = `New Messages(${value})`
+    }
   })
   console.group('render component')
   return (
