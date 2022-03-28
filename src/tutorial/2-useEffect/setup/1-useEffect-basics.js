@@ -9,7 +9,8 @@ const UseEffectBasics = () => {
     if(value >= 1) {
       document.title = `New Messages(${value})`
     }
-  })
+  }, []) // [] means it will only run on the very first render
+  
   console.group('render component')
   return (
     <>
